@@ -1,0 +1,90 @@
+body {
+  --main-blue: #36c9ff;
+  background-image: url(../img/bg.jpg);
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  font-family: "Oswald", sans-serif;
+  padding: 1rem;
+}
+h1 {
+  max-width: 700px;
+  margin: 2rem auto;
+}
+h1 img {
+  width: 100%;
+}
+h2 {
+  font-size: 3rem;
+  font-weight: 300;
+  text-align: center;
+  color: var(--main-blue);
+  line-height: 1.1em;
+}
+
+h3 {
+  text-align: center;
+  margin: 0 0 1rem 0;
+}
+
+h4 {
+  text-align: center;
+}
+
+strong {
+  font-weight: 500;
+}
+
+.content {
+  max-width: 900px;
+  background-color: #fff;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.service {
+  border: 1px solid var(--main-blue);
+  color: var(--main-blue);
+  padding: 1rem;
+}
+
+.service ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.service li {
+  display: flex;
+  align-items: flex-end;
+}
+
+.service li:not(:last-of-type) {
+  margin-bottom: 1rem;
+}
+
+.service .line {
+  flex-grow: 1;
+  border-bottom: 1px solid var(--main-blue);
+  margin: 5px;
+  min-width: 100px;
+}
+
+.service .event {
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+.service .name {
+  text-align: right;
+}
+
+@media only screen and (max-width: 600px) {
+  .service li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .service .line {
+    display: none;
+  }
+}
