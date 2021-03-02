@@ -6,20 +6,22 @@
     </header>
     <div v-swiper="swiperOption" class="mx-auto relative" :loadtheme="false">
       <div class="swiper-wrapper">
-        <div class="swiper-slide md:py-4 px-8" :key="banner" v-for="banner in banners">
+        <div class="swiper-slide flex items-center md:py-4 px-8" :key="banner" v-for="banner in banners">
           <!-- Render original HTML in server, render Swiper in browser (client) -->
           <img class="mx-auto max-h-full w-auto shadow-xl" :src="banner" />
         </div>
       </div>
-      <div class="flex">
+      <!-- <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div> -->
+      <!-- <div class="flex">
         <button class="swiper-prev bg-gray-300 rounded-full p-4 inline-block">
           <img src="/img/arrow.svg" class="w-4 transform rotate-180" />
         </button>
-        <div class="swiper-pagination"></div>
         <button class="swiper-next bg-gray-300 rounded-full p-4 inline-block">
           <img src="/img/arrow.svg" class="w-4" />
         </button>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
@@ -39,11 +41,11 @@ export default {
         loop: false,
         pagination: {
           el: '.swiper-pagination',
-          type: 'bullets',
+          clickable: true
         },
         navigation: {
-          nextEl: ".swiper-next",
-          prevEl: ".swiper-prev",
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
         }
       },
     };
