@@ -1,8 +1,8 @@
 <template>
   <div class="container">
-    <header class="sm:flex hidden p-4 pb-0 flex justify-between items-center">
-      <h1><img src="/img/logo.png" class="h-16 md:h-32 mr-1" alt="Ryan Ditty" /></h1>
-      <h2 class="md:text-xl sm:text-md text-sm leading-tight uppercase text-right"><strong>A Celebration of Life</strong><br />March 6, 2021 // 3PM<br />C3 Los Angeles</h2>
+    <header class="lg:absolute w-full left-0 md:flex hidden p-4 pb-0 flex justify-between items-center">
+      <h1><img src="/img/logo.png" alt="Ryan Ditty" /></h1>
+      <h2 class="lg:text-xl md:text-sm leading-tight uppercase text-right"><strong>A Celebration of Life</strong><br />March 6, 2021 // 3PM<br />C3 Los Angeles</h2>
     </header>
     <div class="relative">
       <Swiper :options="swiperOption" class="mx-auto relative" ref="mySwiper" @slideChange="changeSwiperIndex">
@@ -11,7 +11,7 @@
           <img class="mx-auto max-h-full w-auto shadow-xl" :src="banner" />
         </div>
       </Swiper>
-      <div class="absolute bottom-0 z-10 w-full flex items-center justify-center">
+      <div class="absolute bottom-0 z-10 w-full flex items-center justify-center mb-2">
         <button class="swiper-prev bg-gray-400 rounded-full p-4 inline-block m-2" slot="button-prev" @click="prev()" :disabled="activeIndex === 0">
           <img src="/img/arrow.svg" class="w-4 pointer-events-none transform rotate-180" />
         </button>
@@ -62,14 +62,19 @@ export default {
 </script>
 
 <style scoped>
+h1 {
+  width: 20vw;
+  max-width: 300px;
+}
 h2 {
   color: #003471;
   letter-spacing: 3px;
 }
 .swiper-slide {
-  height: calc(100vh - 160px);
+  height: 100vh;
   min-height: 400px;
 }
+
 .swiper-prev[disabled="disabled"],
 .swiper-next[disabled="disabled"] {
   cursor: default;
@@ -77,6 +82,11 @@ h2 {
 }
 .counter {
   color: #00aeff;
+}
+@media only screen and (min-width: 768px) {
+  .swiper-slide img {
+    max-width: 600px;
+  }
 }
 
 @media only screen and (max-width: 768px) {
