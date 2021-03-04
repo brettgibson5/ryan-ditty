@@ -96,7 +96,7 @@ h2 {
 }
 @media only screen and (max-width: 640px) {
   .swiper-slide {
-    height: 100vh;
+    height: 90vh;
   }
 }
 </style>
